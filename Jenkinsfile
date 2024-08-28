@@ -18,7 +18,13 @@ pipeline{
     stage ("Build"){
       steps{
         sh 'npm run build'
-      }   
+      }
     }
+     stage ("Build image"){
+      steps{
+        sh 'docker build -t my-demo:1.0 .'
+      }
+     }
   }
 }
+      
