@@ -22,7 +22,7 @@ pipeline{
     }
      stage ("Build image"){
       steps{
-        sh 'sudo docker build -t my-demo:1.0 .'
+        sh 'docker build -t my-demo:1.0 .'
       }
      }
   }
