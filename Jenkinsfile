@@ -7,20 +7,20 @@ pipeline{
         checkout scm
       }
     }
-    stage ("Test"){
-      steps{
+      stage ("Test"){
+        steps{
         sh '''
         apt install npm -y
         npm test
         '''
       }
     } 
-    stage ("Build"){
+      stage ("Build"){
       steps{
         sh 'npm run build'
       }
     }
-     stage ("Build image"){
+       stage ("Build image"){
       steps{
         sh 'docker build -t my-demo:1.0 .'
       }
