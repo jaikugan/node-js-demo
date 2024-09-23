@@ -19,7 +19,7 @@ pipeline {
             steps {
                 // Build the Docker image
                 script {
-                    docker.build("${DOCKER_IMAGE}:latest")
+                    sudo docker.build("${DOCKER_IMAGE}:latest")
                 }
             }
         }
